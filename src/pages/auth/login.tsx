@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import fetch from "node-fetch";
 import { useState } from "react";
 
-import Footer from "../../components/footer";
+import Page from "../../components/page";
 
 import type { FormEvent } from "react";
 
@@ -59,33 +59,27 @@ const Login = () => {
   };
 
   return (
-    <>
-      <main>
-        <div>
-          <h1>Login</h1>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="username">
-              Username:
-              <input required type="string" name="username" id="username" />
-            </label>
-            <br />
-            <label htmlFor="password">
-              Password:
-              <input required type="password" name="password" id="password" />
-            </label>
-            <br />
-            <button type="submit">Login</button>
-            <br />
-          </form>
-          {isError && (
-            <p style={{ color: "red" }}>
-              Invalid details. Please check your username and password.
-            </p>
-          )}
-        </div>
-      </main>
-      <Footer isAuth />
-    </>
+    <Page header={{ children: <h1>Login</h1> }} isAuth>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">
+          Username:
+          <input required type="string" name="username" id="username" />
+        </label>
+        <br />
+        <label htmlFor="password">
+          Password:
+          <input required type="password" name="password" id="password" />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+        <br />
+      </form>
+      {isError && (
+        <p style={{ color: "red" }}>
+          Invalid details. Please check your username and password.
+        </p>
+      )}
+    </Page>
   );
 };
 

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import fetch from "node-fetch";
 import { useState } from "react";
 
-import Footer from "../../../components/footer";
+import Page from "../../../components/page";
 
 import type { FormEvent } from "react";
 
@@ -60,35 +60,28 @@ const Login = () => {
   };
 
   return (
-    <>
-      <main>
-        <div>
-          <h1>Two-Factor Authentication</h1>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="token">
-              Two-Factor Authentication
-              <input required type="text" name="token" id="token" />
-            </label>
-            <br />
-            <span style={{ fontSize: "small" }}>
-              <Link href="/auth/two-factor/request">
-                Request two-factor authentication code
-              </Link>
-            </span>
-            <br />
-            <button type="submit">Login</button>
-            <br />
-          </form>
-          {isError && (
-            <p style={{ color: "red" }}>
-              Invalid details. Have you requested a new two-factor
-              authentication code?
-            </p>
-          )}
-        </div>
-      </main>
-      <Footer isAuth />
-    </>
+    <Page header={{ children: <h1>Two-Factor Authentication</h1> }} isAuth>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="token">
+          2FA: <input required type="text" name="token" id="token" />
+        </label>
+        <br />
+        <span style={{ fontSize: "small" }}>
+          <Link href="/auth/two-factor/request">
+            Request two-factor authentication code
+          </Link>
+        </span>
+        <br />
+        <button type="submit">Login</button>
+        <br />
+      </form>
+      {isError && (
+        <p style={{ color: "red" }}>
+          Invalid details. Have you requested a new two-factor authentication
+          code?
+        </p>
+      )}
+    </Page>
   );
 };
 

@@ -1,0 +1,27 @@
+.header {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    60deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.full {
+  width: 100vw;
+  height: 100vh;
+}
+
+.headerChild {
+  color: white;
+  margin: 0;
+  padding: 1rem;
+  text-transform: uppercase;
+
+  .full & {
+    font-size: 4rem;
+    padding: 8rem;
+    text-transform: initial;
+  }
+}
