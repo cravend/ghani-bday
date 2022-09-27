@@ -6,9 +6,9 @@ const Desktop = () => (
   <Page header={{ children: <h1>Desktop</h1> }} isAuth>
     <h2>Welcome, Ghani, to your digital hub!</h2>
     <h3>Desktop Utility!</h3>
-    <p>Here is v1.0.0 of the desktop utility.</p>
+    <p>Here is v1.0.1 of the desktop utility.</p>
     <p>
-      <a href="/projects/desktop_util_v1-0-0.zip" download>
+      <a href="/projects/desktop_util_v1-0-1.zip" download>
         Download
       </a>
     </p>
